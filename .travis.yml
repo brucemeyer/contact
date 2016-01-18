@@ -1,0 +1,24 @@
+language: ruby
+sudo: false
+cache: bundler
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.5
+  - 2.2.1
+gemfile:
+  - gemfiles/Gemfile-rails.3.2.x
+  - gemfiles/Gemfile-rails.4.0.x
+  - gemfiles/Gemfile-rails.4.1.x
+  - Gemfile
+matrix:
+ exclude:
+   - rvm: 2.2.1
+     gemfile: gemfiles/Gemfile-rails.3.2.x
+notifications:
+  email: false
+  campfire:
+    on_success: change
+    on_failure: always
+    rooms:
+      - secure: "PexwWrMM6bkEVPt5b28GGSF5ThaUX5mRgY/8fK3kAXgGolvXoZdF6XZt8zE1\nTbE+AMQLayILXOFRd1bTL537Qf2Y63n6arKH19t9GBBdqZo1ZveVOca0qiSB\n0reSG8sauQXUA95ygEqhWd6VYkDRu1oJpwgsDv47igawbqAOrgE="
